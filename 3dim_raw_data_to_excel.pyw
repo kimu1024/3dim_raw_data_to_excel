@@ -15,12 +15,7 @@ class Converter():
         self.srslist = []  # 各測定データシート中のグラフリスト。summaryシートに載せる
 
     def convert(self, input_filename, excelfilename):
-        self.wb = openpyxl.Workbook()
-        self.nameList = []  # 測定データのタイトルリスト
-        self.dataList = []  # 測定データ
-        self.summaryList = []  # 各測定データの集計値
-        self.summaryIndex = []  #
-        self.srslist = []  # 各測定データシート中のグラフリスト。summaryシートに載せる
+        self.__init__()
         self.read_input_file(input_filename)
         self.create_sheet()
         self.write_each_sheet()
